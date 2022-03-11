@@ -1,0 +1,6 @@
+*.crt
+*.csr
+*.jks
+*.pem
+*.key
+*.srl
