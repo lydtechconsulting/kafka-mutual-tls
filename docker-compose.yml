@@ -28,4 +28,4 @@ services:
       KAFKA_SSL_CLIENT_AUTH: requested
       KAFKA_SECURITY_INTER_BROKER_PROTOCOL: SSL
     volumes:
-      - ./certCreation/secrets:/etc/kafka/secrets
+      - ./certCreation/secrets/server:/etc/kafka/secrets

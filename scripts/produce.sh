@@ -1,3 +1,4 @@
-docker exec -it kafka-mutual-tls_kafka_1 /usr/bin/kafka-console-producer   --broker-list localhost:9092   --topic my-topic 
-
-docker exec -it kafka-mutual-tls_kafka_1 /usr/bin/kafka-console-producer   --broker-list localhost:29092   --topic my-topic --producer.config /etc/kafka/secrets/certs.propertie
+docker run -v "$(pwd)/certCreation/secrets/client:/etc/kafka/secrets" --network host -ti \
+   confluentinc/cp-kafka:latest /usr/bin/kafka-console-producer \
+   --bootstrap-server localhost:29092 --topic my-topic \
+   --producer.config /etc/kafka/secrets/certs.properties
