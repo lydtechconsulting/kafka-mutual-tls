@@ -19,4 +19,5 @@ keytool -keystore kafka.client1.truststore.jks -alias CARoot -import -noprompt -
 # Inspect keystore contents
 keytool -list -v -keystore kafka.client1.keystore.jks -storepass changeit
 
-#cp kafka.client1.*.jks secrets/client
+# Copy to directory that is used as a docker volume
+cp kafka.client1.*.jks secrets/client

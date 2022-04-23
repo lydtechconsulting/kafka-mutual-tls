@@ -27,5 +27,7 @@ services:
       KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: " "
       KAFKA_SSL_CLIENT_AUTH: requested
       KAFKA_SECURITY_INTER_BROKER_PROTOCOL: SSL
+      KAFKA_AUTHORIZER_CLASS_NAME: kafka.security.authorizer.AclAuthorizer
+      KAFKA_SUPER_USERS: 'User:CN=localhost,OU=TEST,O=LYDTECH,L=London,ST=LN,C=UK'
     volumes:
       - ./certCreation/secrets/server:/etc/kafka/secrets

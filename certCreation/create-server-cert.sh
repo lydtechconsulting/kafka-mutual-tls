@@ -1,5 +1,5 @@
 # Create a private key
-keytool -genkey  -alias lydtech-server -dname "CN=server.kafka.lydtechconsulting.com, OU=TEST, O=LYDTECH, L=London, S=LN, C=UK" -keystore kafka.server.keystore.jks -keyalg RSA  -storepass changeit  -keypass changeit
+keytool -genkey  -alias lydtech-server -dname "CN=localhost, OU=TEST, O=LYDTECH, L=London, S=LN, C=UK" -keystore kafka.server.keystore.jks -keyalg RSA  -storepass changeit  -keypass changeit
  
 # Create CSR
 keytool -keystore kafka.server.keystore.jks -alias lydtech-server -certreq -file kafka-server.csr -storepass changeit -keypass changeit
@@ -19,4 +19,5 @@ keytool -keystore kafka.server.truststore.jks -alias CARoot -import -noprompt -f
 # Inspect keystore contents
 keytool -list -v -keystore kafka.server.keystore.jks -storepass changeit
 
-#cp kafka.server.*.jks secrets/server/
+# Copy to directory that is used as a docker volume
+cp kafka.server.*.jks secrets/server/
