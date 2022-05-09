@@ -1,5 +1,10 @@
 ### Kafka TLS example project
 
+### accompanying article
+See the follwing article for an in-depth explanation and walkthrough of this repo
+https://medium.com/lydtech-consulting/securing-kafka-with-mutual-tls-and-acls-b235a077f3e3
+
+
 ### Pre-requisites
 1. Ensure OpenSSL and a recent version of the Java JRE are installed (Java `keytool` needed for some steps)
 1. Create CA keypair (`./certCreation/create-ca.sh`)
